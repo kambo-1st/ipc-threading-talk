@@ -1,0 +1,45 @@
+<?php
+
+namespace Kambo\Benchmark;
+
+use Spatie\Async\Pool;
+use Throwable;
+
+/**
+ * @Iterations(5)
+ * @Revs(5)
+ * @Warmup(5)
+ * @OutputTimeUnit("milliseconds", precision=5)
+ */
+class ProcessBench
+{
+    public function benchRequest() {
+        $pool = Pool::create();
+
+        $datas = [];
+        foreach (array_fill(0, 5, 'https://www.example.com') as $index => $thing) {
+            $pool->add(function () use ($index, $thing) {
+                $curl = curl_init();
+
+                curl_setopt($curl, CURLOPT_URL, $thing);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_HEADER, false);
+
+                $data = curl_exec($curl);
+
+                curl_close($curl);
+
+                return [$data, $index];
+                // Do a thing
+            })->then(function ($output) {
+               var_dump($output);
+            })->catch(function (Throwable $exception) {
+                throw $exception;
+            });
+        }
+
+        $pool->wait();
+
+        var_dump($datas);
+    }
+}

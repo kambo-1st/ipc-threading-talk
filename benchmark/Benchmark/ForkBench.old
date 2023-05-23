@@ -1,0 +1,44 @@
+<?php
+
+namespace Kambo\Benchmark;
+
+use Spatie\Fork\Fork;
+
+/**
+ * @Iterations(5)
+ * @Revs(5)
+ * @Warmup(5)
+ * @OutputTimeUnit("milliseconds", precision=5)
+ */
+class ForkBench
+{
+    public function benchRequest() {
+        $fce = function ()  {
+            $url = 'https://www.example.com';
+
+            $curl = curl_init();
+
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_HEADER, false);
+
+            $data = curl_exec($curl);
+
+            curl_close($curl);
+            return $data;
+        };
+
+        for ($i = 0; $i < 5; $i++) {
+            $fces[] = $fce;
+        }
+
+        $results = Fork::new()
+            ->run(
+                ...$fces
+            );
+
+        foreach ($results as $result) {
+            $out = $result;
+        }
+    }
+}

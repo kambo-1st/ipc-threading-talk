@@ -1,0 +1,17 @@
+{
+    "require-dev": {
+        "phpbench/phpbench": "^1.1",
+        "amphp/http-client": "^5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kambo\\DuckDB\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "spatie/async": "^1.5",
+        "spatie/fork": "^1.1"
+    }
+}

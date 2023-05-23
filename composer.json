@@ -1,0 +1,9 @@
+{
+    "require": {
+        "amphp/http-client": "^5",
+        "spatie/async": "^1.5",
+        "spatie/fork": "^1.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

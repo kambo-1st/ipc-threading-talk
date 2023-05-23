@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PHPBench Report</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body class="container">
+                <h1>PHPBench Report</h1>
+        <hr/>
+                    <div>
+            <h2>DuckDB connectors comparison</h2>
+                <p>Compares different implementations of the DuckDB connectors</p>
+                            <div id="phpbench-component-4" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Basic Usage"],
+        name: 'SingleThreadBench',
+        y: [2119052.1033268184],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'AsyncBench',
+        y: [598685.3225049016],
+        type: 'bar',
+            },
+        {
+        x: ["Basic Usage"],
+        name: 'ThreadsBench',
+        y: [1027692.0951076312],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,211905.21033268183,423810.42066536366,635715.6309980454,847620.8413307273,1059526.0516634092,1271431.2619960909,1483336.4723287728,1695241.6826614547,1907146.8929941365,2119052.1033268184],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","211.905<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","423.810<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","635.716<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","847.621<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","1.060<span style=\"color: #555; font-weight: bold;\">s<\/span>\n","1.271<span style=\"color: #555; font-weight: bold;\">s<\/span>\n","1.483<span style=\"color: #555; font-weight: bold;\">s<\/span>\n","1.695<span style=\"color: #555; font-weight: bold;\">s<\/span>\n","1.907<span style=\"color: #555; font-weight: bold;\">s<\/span>\n","2.119<span style=\"color: #555; font-weight: bold;\">s<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Basic Usage"],
+        ticktext: ["Basic Usage"],
+    }
+};
+Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
+</script>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-11" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-11-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-11-0" 
+                        aria-controls="#tab-content-phpbench-component-11-0" 
+                        aria-current="page" 
+                        >
+                        SingleThreadBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-11-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-11-1" 
+                        aria-controls="#tab-content-phpbench-component-11-1" 
+                        aria-current="page" 
+                        >
+                        AsyncBench                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-11-2" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-11-2" 
+                        aria-controls="#tab-content-phpbench-component-11-2" 
+                        aria-current="page" 
+                        >
+                        ThreadsBench                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-11-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-11-0"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>SingleThreadBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchRequest</td>
+            <td>799.600<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>2.107<span style="color: #555; font-weight: bold;">s</span>
+</td>
+            <td>2.222<span style="color: #555; font-weight: bold;">s</span>
+</td>
+            <td>2.119<span style="color: #555; font-weight: bold;">s</span>
+</td>
+            <td><span style="color: #020000">
+    <span style="color: #555; font-weight: bold;">±</span>
+1.99%</span>
+
+</td>
+            <td>42.516<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-11-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-11-1"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>AsyncBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchRequest</td>
+            <td>26.624<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>595.454<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>599.732<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>598.685<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #000000">
+    <span style="color: #555; font-weight: bold;">±</span>
+0.27%</span>
+
+</td>
+            <td>1.605<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-11-2" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-11-2"
+          >
+<br/>
+              <table class="table table-striped table-bordered table-hover">
+            <caption>ThreadsBench</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>variant</th>
+                            <th>memory</th>
+                            <th>min</th>
+                            <th>max</th>
+                            <th>mode</th>
+                            <th>rstdev</th>
+                            <th>stdev</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>benchRequest</td>
+            <td>799.592<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>966.370<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>1.977<span style="color: #555; font-weight: bold;">s</span>
+</td>
+            <td>1.028<span style="color: #555; font-weight: bold;">s</span>
+</td>
+            <td><span style="color: #560000">
+    <span style="color: #555; font-weight: bold;">±</span>
+34.29%</span>
+
+</td>
+            <td>473.345<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+    </tr>
+            </tbody>
+</table>
+          </div>
+                          </div>
+    </div>
+            </div>
+    </body>
+    <footer>
+        <center>
+        Generated by <a href="https://github.com/phpbench/phpbench">PHPBench</a>
+        </center>
+    </footer>
+    <script type="text/javascript">
+    /**
+     * Resize Plots when tab is activated
+     */
+    (function () {
+        var tabEls = document.querySelectorAll('button[data-bs-toggle="tab"]')
+        tabEls.forEach(function (tabEl) {
+            tabEl.addEventListener('shown.bs.tab', function (event) {
+console.log(event);
+                var docs = event.target.parentNode.parentNode.parentNode.querySelectorAll('.tab-pane.active .js-plotly-plot');
+                docs.forEach(function (plotEl) {
+                    Plotly.relayout(plotEl, {autosize: true});
+                });
+            });
+        });
+    })();
+    </script>
+</html>
